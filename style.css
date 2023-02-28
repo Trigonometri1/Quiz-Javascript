@@ -29,3 +29,42 @@ body {
   border-color: #000000;
   cursor: pointer;
 }
+
+.quiz_rules {
+  background: #ebc7e6;
+  width: 550px;
+  border-radius: 5px;
+}
+
+.quiz_rules .quiz_rules_title {
+  padding: 0 25px;
+  font-size: large;
+  font-weight: 600;
+  border-bottom: 1px solid #000000;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.quiz_rules .quiz_rules_body {
+  padding: 10px 25px;
+}
+
+.quiz_rules .quiz_rules_body .rule {
+  margin: 7px 0;
+  font-size: 18px;
+}
+.quiz_rules .quiz_rules_body .rule span {
+  font-weight: 600;
+  color: #fa231f;
+}
+
+.quiz_rules .buttons {
+  padding: 0 35px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid #000000;
+}
