@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #645cbb;
+}
+
+.start_btn,
+.quiz_rules {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start_btn button {
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ebc7e6;
+  background-color: #a084dc;
+  border-radius: 5px;
+  border-color: #000000;
+  cursor: pointer;
+}
