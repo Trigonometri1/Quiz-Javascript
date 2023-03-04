@@ -13,7 +13,8 @@ body {
 
 .start_btn,
 .quiz_rules,
-.quiz_card {
+.quiz_card,
+.score_card {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -276,4 +277,50 @@ section .option_list .option:hover {
 
 .quiz_card footer .current_question span p {
   padding: 3px 5px;
+}
+
+.score_card {
+  background-color: #9d4888;
+  height: 300px;
+  width: 400px;
+  border-radius: 7px;
+  border: 2px solid #e5e5e5;
+  box-shadow: 0 0 30px 0 #e5e5e5;
+}
+
+.score_card .complete_icon {
+  position: absolute;
+  top: 60px;
+  left: 150px;
+  height: 100px;
+  width: 100px;
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+}
+
+.score_card .score_txt {
+  margin: 200px 10px 10px 18px;
+  height: 80px;
+  width: 90%;
+  background-color: #b573e8;
+  text-align: center;
+  line-height: 35px;
+  border: 3px solid #9108fa;
+  border-radius: 7px;
+  box-shadow: 0 0 20px 0 #9108fa;
+}
+
+.score_card .score_txt .your_score_txt {
+  font-size: 20px;
+  font-weight: 1px;
+  color: #e5e5e5;
+}
+
+.score_card .score_txt span {
+  font-size: 40px;
+  font-weight: 700px;
+  color: #e5e5e5;
 }
