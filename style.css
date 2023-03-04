@@ -114,6 +114,7 @@ body {
 }
 
 .quiz_card {
+  display: none;
   width: 600px;
   background: #ece9e2;
   border-radius: 7px;
@@ -256,4 +257,23 @@ section .option_list .option:hover {
   background-color: #9108fa;
   color: #e5e5e5;
   box-shadow: 1px 1px 10px 10px rgba(184, 84, 171, 0.5);
+}
+
+.quiz_card footer .current_question {
+  color: #e5e5e5;
+  height: 30px;
+  width: 70px;
+  border-radius: 5px;
+  background-color: #9108fa;
+}
+
+.quiz_card footer .current_question span {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz_card footer .current_question span p {
+  padding: 3px 5px;
 }
