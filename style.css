@@ -21,6 +21,15 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.quiz_rules.show_quiz_rules,
+.quiz_card.show_quiz_card,
+.score_card.show_score_card {
+  z-index: 5;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate (-50%, -50%) scale(1);
+}
+
 .start_btn button {
   padding: 15px;
   font-size: 20px;
@@ -40,11 +49,15 @@ body {
 }
 
 .quiz_rules {
-  display: none;
+  opacity: 0;
   background: #ece9e2;
   height: 340px;
   width: 550px;
   border-radius: 5px;
+  pointer-events: none;
+  transform: translate (-50%, -50%) scale(0.9);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
 }
 
 .quiz_rules .quiz_rules_title {
@@ -115,10 +128,14 @@ body {
 }
 
 .quiz_card {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate (-50%, -50%) scale(0.9);
   width: 600px;
   background: #ece9e2;
   border-radius: 7px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
 }
 
 .quiz_card header {
@@ -280,6 +297,9 @@ section .option_list .option:hover {
 }
 
 .score_card {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate (-50%, -50%) scale(0.9);
   background-color: #9d4888;
   height: 300px;
   width: 400px;
@@ -311,6 +331,7 @@ section .option_list .option:hover {
   border: 3px solid #9108fa;
   border-radius: 7px;
   box-shadow: 0 0 20px 0 #9108fa;
+  transform: all 0.4 ease;
 }
 
 .score_card .score_txt .your_score_txt {
