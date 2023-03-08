@@ -10,6 +10,7 @@ const time_second = quiz_card.querySelector(".timer .second_txt");
 const score_card = document.querySelector(".score_card");
 const current_question = document.querySelector(".current_question");
 const timer = document.querySelector(".quiz_card .timer .second_txt");
+const option_list = document.querySelector(".option_list");
 
 // `<span><p>${question_number + 1} </p>of<p> ${
 //   questions.length
@@ -51,38 +52,56 @@ next_btn.onclick = () => {
 //*Get Questions and Options Dinamicly
 const showQuestion = (question_index) => {
   const question_txt = document.querySelector(".question_txt");
-  const option_list = document.querySelector(".option_list");
 
   let queHtml = `<span>${questions[question_index].question}</span>`;
   let optionHtml = `
-    <div class="option">
-      <span>${questions[question_index].options[0]}</span>
-    </div>
+    <div class="option">${questions[question_index].options[0]}</div>
 
-    <div class="option">
-      <span>${questions[question_index].options[1]}</span>
-    </div>
+    <div class="option">${questions[question_index].options[1]}</div>
 
-    <div class="option">
-      <span>${questions[question_index].options[2]}</span>
-    </div>
+    <div class="option">${questions[question_index].options[2]}</div>
 
-    <div class="option">
-      <span>${questions[question_index].options[3]}</span>
-    </div>`;
+    <div class="option">${questions[question_index].options[3]}</div>`;
 
   question_txt.innerHTML = queHtml;
   option_list.innerHTML = optionHtml;
 
-  showCurrentQuestion();
+  //! Adding answer question function to each option element
+  const options = option_list.querySelectorAll(".option");
+  for (const option of options) {
+    option.setAttribute("onclick", "controlSelectedOption(this)");
+  }
+
+  //! Show the number of current question
+  showCurrentQuestionNumber();
 };
 
-const showCurrentQuestion = () => {
+//* Function shows the number of current question
+const showCurrentQuestionNumber = () => {
   let currentQuestionHTML = `
     <span><p>${questions[question_number].id} </p>of<p> 
       ${questions.length}
     </p></span>`;
   current_question.innerHTML = currentQuestionHTML;
+};
+
+//* Initialize controlSelectedOption(this)
+const controlSelectedOption = (option) => {
+  let correct_answer = questions[question_number].answer;
+  let option_answer = option.textContent;
+  let option_list_length = option_list.children.length;
+
+  if (option_answer == correct_answer) {
+    option.classList.add("correct");
+    console.log("Correct Answer");
+  } else {
+    option.classList.add("incorrect");
+    console.log("Incorrect Answer");
+  }
+
+  for (let index = 0; index < option_list_length; index++) {
+    option_list.children[index].classList.add("disabled");
+  }
 };
 
 //* Create a Timer

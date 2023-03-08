@@ -248,6 +248,24 @@ section .option_list .option:hover {
   color: #ab1400;
 }
 
+.quiz_card section .option_list .option.correct {
+  background: #24e639;
+  color: #3c3531;
+  font-weight: 800;
+  border-color: #179e25;
+}
+
+.quiz_card section .option_list .option.incorrect {
+  background: #ff392c;
+  color: #ffdedc;
+  font-weight: 800;
+  border-color: #731b15;
+}
+
+.quiz_card section .option_list .option.disabled {
+  pointer-events: none;
+}
+
 .quiz_card footer {
   height: 80px;
   width: 100%;
